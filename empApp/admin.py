@@ -3,4 +3,8 @@ from empApp.models import Employee
 
 
 # Register your models here.
-admin.site.register(Employee)
+class EmployeeAdmin(admin.ModelAdmin):
+    list_display = ["firstName", "lastName", "salary", "email"]
+
+
+admin.site.register(Employee, EmployeeAdmin)
