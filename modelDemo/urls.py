@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from empApp import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('employee-list/', views.employeeData),
 ]
