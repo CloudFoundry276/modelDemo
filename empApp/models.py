@@ -31,3 +31,18 @@ class PhoneNumber(models.Model):
     type = models.CharField(max_length=10)
     number = models.CharField(max_length=10)
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+
+
+# Implemented One To One ORM
+class Person(models.Model):
+    firstName = models.CharField(max_length=30)
+    lastName = models.CharField(max_length=30)
+    age = models.IntegerField()
+
+
+# Implemented One To One ORM
+class License(models.Model):
+    type = models.CharField(max_length=20)
+    validFrom = models.DateField()
+    validTo = models.DateField()
+    person = models.OneToOneField(Person, on_delete=models.CASCADE)
